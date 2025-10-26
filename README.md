@@ -1,6 +1,19 @@
 # flutter_fixed
 
-A new Flutter project.
+A basic flutter based app.
+Theme is a theme park app that has the following features:
+- 4 Main pages that can be navigated between.
+- A page listing different rides and their descriptions.
+- A ticket page that you can use to add tickets to shopping cart.
+- A checkout page to view what your ticketsd.
+
+
+
+
+
+
+
+
 
 ## Getting Started
 
