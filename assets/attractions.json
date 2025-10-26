@@ -1,0 +1,63 @@
+[
+    {
+      "name": "Twister",
+      "description": "Only the brave would dare take on the challenge of this ride. Are you ready to face your fears?",
+      "pictureUrl": "https://www.verywellfamily.com/thmb/A2GVBIntLaFutycYlq9vX4Ewk4I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/roller-coaster-149508746-57ac7eb45f9b58974ace1b67.jpg",
+      "alternatePictureUrl": "thatOne.png"
+    },
+    {
+      "name": "Mr Monkey's Banana Ride",
+      "description": "This ride will swing you to the moon and back! Come along for a journey with Mr Monkey as you test your mettle!",
+      "pictureUrl": "https://example.com/attraction2.jpg",
+      "alternatePictureUrl": "swingRide.png"
+    },
+    {
+      "name": "Dorito",
+      "description": "This one will have you swallowing back up all the sick you built up.",
+      "pictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn7lWqfzgiYYEUYjJKAfivDdoS-R1nY1YVToYM85FTCD07pfGc7QaAN66euqWCf1t-7E4&usqp=CAU",
+      "alternatePictureUrl": "orangeRollerCoaster.png"
+    },
+    {
+      "name": "Bullet",
+      "description": "This one'll send you into the future!",
+      "pictureUrl": "https://static01.nyt.com/images/2023/07/02/multimedia/29ROLLERCOASTER-02-lwgc/29ROLLERCOASTER-02-lwgc-videoSixteenByNine3000.jpg",
+      "alternatePictureUrl": "swingFake.png"
+    },
+    {
+      "name": "Looper",
+      "description": "Watch in horror as the other carts loop around you!",
+      "pictureUrl": "https://cms-cdn.zaonce.net/2020-06/magnificent-rides-collection_keyart.jpg",
+      "alternatePictureUrl": "loopDeLoop.png"
+    },
+    {
+      "name": "Anti-Gravity",
+      "description": "Keep your glasses and other accessories safe! This ride won't take kindly to those who like to stay... upright.",
+      "pictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdEmrSwYstJQ47GW6CrAWc3pHZrInEIGYbGVqs3Fh-qQ&s",
+      "alternatePictureUrl": "upsideDown.png"
+    },
+    {
+      "name": "Impact",
+      "description": "Prepare your stomach for this dropper.",
+      "pictureUrl": "https://www.coloradoan.com/gcdn/-mm-/127f63e7e3335dbe71d0ef2cd9a5d0b46a09ea76/c=0-183-3600-2217/local/-/media/2017/07/27/USATODAY/USATODAY/636367750800826853-Twisted-Colossus2.jpg",
+      "alternatePictureUrl": "dropCoaster.png"
+    },
+    {
+      "name": "Plummeter",
+      "description": "Hope you're not afraid of heights. This ride will drop you down so fast your skin will fall off!",
+      "pictureUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF1g2970dkHSMK3WyZl1GrLLpTc34cvxUPpPqB_tZO6g&s",
+      "alternatePictureUrl": "dropRide.png"
+    },
+    {
+      "name": "UFO",
+      "description": "A nice calm ride that'll allow you to take in the grand scenery here at Robbie's Rodeo!",
+      "pictureUrl": "https://media.istockphoto.com/id/138210023/photo/families-at-the-fair-on-a-swing-ride.jpg?s=612x612&w=0&k=20&c=OeEljz14nfcu5Zdrp2O1RXsivk5_5j2XV3Pct3CoTMk=",
+      "alternatePictureUrl": "spinRide.png"
+    },
+    {
+      "name": "Windmill",
+      "description": "Just when you think it's over you'll realise it's just getting started hahaha!",
+      "pictureUrl": "https://i.pinimg.com/564x/a0/8a/79/a08a79e020638944033d67216a4dd93d.jpg",
+      "alternatePictureUrl": "windmillRide.png"
+    }
+  ]
+  

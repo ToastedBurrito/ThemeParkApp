@@ -1,0 +1,45 @@
+[
+    {
+      "imageURL": "https://cdn-icons-png.flaticon.com/512/785/785581.png",
+      "alt": "standard.png",
+      "title": "Standard Pass",
+      "description": "Includes standard entry to theme park and all rides. Only for 3 hours.",
+      "price": 19.99
+    },
+    {
+      "imageURL": "https://cdn-icons-png.flaticon.com/512/726/726448.png",
+      "alt": "green.png",
+      "title": "Classic Pass",
+      "description": "A full day pass in addition to the Standard Pass benefits.",
+      "price": 29.99
+    },
+    {
+        "imageURL": "https://icons.veryicon.com/png/o/commerce-shopping/o2o-business-platform/coupon-59.png",
+        "alt": "redFast.png",
+        "title": "Fast track Pass",
+        "description": "An upgrade to the Classic Pass to include fast track entry into rides.",
+        "price": 29.99
+    },
+    {
+      "imageURL": "https://cdn-icons-png.flaticon.com/512/5782/5782675.png",
+      "alt": "purpleFood.png",
+      "title": "Purple pack Pass",
+      "description": "An upgrade to the Classic Pass to include a free meal at any of our restaurants. (one time use)",
+      "price": 39.99
+    },
+    {
+      "imageURL": "https://cdn-icons-png.flaticon.com/512/1136/1136078.png",
+      "alt": "blueFull.png",
+      "title": "Full bundle Pass",
+      "description": "A full bundle pass including a meal and fast track. You wouldn't need anything else!",
+      "price": 49.99
+    },
+    {
+      "imageURL": "https://cdn-icons-png.flaticon.com/512/679/679837.png",
+      "alt": "gold.png",
+      "title": "Premium Pass",
+      "description": "Only for our biggest patrons. Full inclusive deal.",
+      "price": 59.99
+    }
+  ]
+  
