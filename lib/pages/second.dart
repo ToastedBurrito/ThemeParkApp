@@ -33,9 +33,7 @@ class _SecondState extends State<Second> {
 }
 
 class PortraitScrollView extends StatelessWidget {
-  const PortraitScrollView({
-    super.key,
-  });
+  const PortraitScrollView({super.key});
 
   @override
   Widget build(BuildContext context) {
