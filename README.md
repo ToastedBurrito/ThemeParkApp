@@ -6,15 +6,14 @@ Theme is a theme park app that has the following features:
 - A page listing different rides and their descriptions.
 - A ticket page that you can use to add tickets to shopping cart.
 - A checkout page to view what your ticketsd.
-  /
-  /
-  /
-  /
-  /
-  /
-  /
-  //
-  /
+
+
+
+\\
+\
+\
+\z
+  \
 ## Default Flutter Documentation.
 
 This project is a starting point for a Flutter application.
