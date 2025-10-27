@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_fixed/pages/first.dart';
@@ -11,20 +13,40 @@ class Trivia extends StatefulWidget {
 
 class _TriviaState extends State<Trivia> {
   String numberFact = '';
+  int counter = 1;
 
   Future<void> fetchNumberFact() async {
     try {
-      final response = await http.get(Uri.parse('http://numbersapi.com/random'));
+      // final response = http.Response(
+      //   'Error with API, retry later or something idk', // body 
+      //   204, // status code
+      // ); 
+      final response = await http
+       .get(Uri.parse('http://numbersapi.com/random')) // <-- real API call
+       .timeout(const Duration(seconds:2)); // <-- timeout for slow connections
       if (response.statusCode == 200) {
         setState(() {
-          numberFact = response.body;
+          numberFact = "HELPPPPP MEEEEE"; //response.body;
         });
       } else {
+        setState(() {
+          numberFact = "error: couldn't get a fact";
+        });
         throw Exception('Failed to load number fact');
       }
+    } on TimeoutException { 
+      print('The connection has timed out, Please try again!');
+      if (!mounted) return; 
+      setState(() {
+          numberFact = "Request Timed out! ${counter++}";
+        });
     } catch (e) {
       // ignore: avoid_print
       print('Error: $e - happened when trying connect to API');
+      if (!mounted) return; 
+      setState(() {
+          numberFact = "Exception on API call.";
+        });
     }
   }
 
