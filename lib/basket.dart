@@ -3,14 +3,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Ticket {
   final String imageURL;
-  final String alt;
+  final String altURL;
   final String title;
   final String description;
   final double price;
 
   Ticket({
     required this.imageURL,
-    required this.alt,
+    required this.altURL,
     required this.title,
     required this.description,
     required this.price,
@@ -19,7 +19,7 @@ class Ticket {
   factory Ticket.fromJson(Map<String, dynamic> json) {
     return Ticket(
       imageURL: json['imageURL'],
-      alt: json['alt'],
+      altURL: json['alt'],
       title: json['title'],
       description: json['description'],
       price: json['price'].toDouble(),
@@ -28,7 +28,7 @@ class Ticket {
   Map<String, dynamic> toJson() {
     return {
       'imageURL': imageURL,
-      'alt': alt,
+      'alt': altURL,
       'title': title,
       'description': description,
       'price': price,
