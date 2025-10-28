@@ -40,6 +40,7 @@ class _ThirdState extends State<Third> {
     _scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         content: Text('${ticket.title} added to basket'),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -60,27 +61,34 @@ class _ThirdState extends State<Third> {
           : ListView.builder(
               itemCount: tickets.length,
               itemBuilder: (context, index) {
-                final ticket = tickets[index];
-                final ticketData = Ticket(
-                  imageURL: ticket['imageURL'],
-                  alt: ticket['alt'],
-                  title: ticket['title'],
-                  description: ticket['description'],
-                  price: ticket['price'],
-                );
+                final ticketData = Ticket.fromJson(tickets[index]); // same as below but much much neater
+                // final ticket = tickets[index];
+                // final ticketData = Ticket(
+                //   imageURL: ticket['imageURL'],
+                //   altURL: ticket['alt'],
+                //   title: ticket['title'],
+                //   description: ticket['description'],
+                //   price: ticket['price'],
+                // );
 
                 return ListTile(
-                  leading: Image.network(ticket['imageURL']),
-                  title: Text(ticket['title']),
+                  leading: Image.network(
+                    ticketData.imageURL, width: 50, height: 50, fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                      Image.asset("assets/tickets/${ticketData.altURL}", width: 50, height: 50, fit: BoxFit.cover),
+                    loadingBuilder: (context, child, loadingProgress) => 
+                      loadingProgress == null ? child : CircularProgressIndicator(),
+                  ), 
+                  title: Text(ticketData.title),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(ticket['description']),
+                      Text(ticketData.description),
                       const SizedBox(height: 4),
                       Row(
                         children: [
                           Text(
-                            '\$${ticket['price'].toStringAsFixed(2)}',
+                            '\$${ticketData.price.toStringAsFixed(2)}',
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(width: 8),
