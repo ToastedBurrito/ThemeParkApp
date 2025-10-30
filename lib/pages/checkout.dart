@@ -62,7 +62,7 @@ class _BasketScreenState extends State<BasketScreen> {
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(ticket.description),
+                      SizedBox (height: 40, child:Text(ticket.description)),
                       const SizedBox(height: 4),
                       Row(
                         children: [

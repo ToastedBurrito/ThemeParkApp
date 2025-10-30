@@ -90,7 +90,7 @@ class _ThirdState extends State<Third> {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(ticketData.description),
+                        SizedBox (height: 40, child: Text(ticketData.description)),
                         const SizedBox(height: 4),
                         Row(
                           children: [
