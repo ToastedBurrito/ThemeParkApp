@@ -1,11 +1,17 @@
 # Themepark Application
 
 A **basic** flutter based app.
-Theme is a theme park app that has the following features:
+Theme is a theme park app that has the following main features:
 - 4 Main pages that can be navigated between.
-- A page listing different rides and their descriptions.
+- Pages listing different rides and tickets to view.
 - A ticket page that you can use to add tickets to shopping cart.
-- A checkout page to view what your ticketsd.
+- A checkout page to view tickets added.
+Misc features
+- Add and remove buttons for tickets, with a cart that saves state on visit.
+- Snackbar icon with undo button on ticket add.
+- Alternate forms of images as fallback.
+- Simple API functionality for trivia.
+- Landscape and portrait adaptability.
 \
 \
 \
