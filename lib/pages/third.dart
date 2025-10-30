@@ -35,76 +35,84 @@ class _ThirdState extends State<Third> {
     }
   }
 
-  void _addToBasket(Ticket ticket) async {
+  void _addTicket(Ticket ticket) async {
     await BasketUtils.addToBasket(ticket);
     _scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         content: Text('${ticket.title} added to basket'),
         duration: const Duration(seconds: 2),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () async {
+            // Some code to undo the change.
+            await BasketUtils.removeFromBasket(ticket);
+          },
+        ),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScaffoldMessenger(
       key: _scaffoldMessengerKey,
-      //for the snackbar ^^
+      // cant be key ^^ for scaffold.
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Tickets'),
+        ),
+        body: tickets.isEmpty
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListView.builder(
+                itemCount: tickets.length,
+                itemBuilder: (context, index) {
+                  final ticketData = Ticket.fromJson(tickets[index]); // same as below but much much neater
+                  // final ticket = tickets[index];
+                  // final ticketData = Ticket(
+                  //   imageURL: ticket['imageURL'],
+                  //   altURL: ticket['alt'],
+                  //   title: ticket['title'],
+                  //   description: ticket['description'],
+                  //   price: ticket['price'],
+                  // );
 
-      appBar: AppBar(
-        title: const Text('Tickets'),
-      ),
-      body: tickets.isEmpty
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
-          : ListView.builder(
-              itemCount: tickets.length,
-              itemBuilder: (context, index) {
-                final ticketData = Ticket.fromJson(tickets[index]); // same as below but much much neater
-                // final ticket = tickets[index];
-                // final ticketData = Ticket(
-                //   imageURL: ticket['imageURL'],
-                //   altURL: ticket['alt'],
-                //   title: ticket['title'],
-                //   description: ticket['description'],
-                //   price: ticket['price'],
-                // );
-
-                return ListTile(
-                  leading: Image.network(
-                    ticketData.imageURL, width: 50, height: 50, fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) =>
-                      Image.asset("assets/tickets/${ticketData.altURL}", width: 50, height: 50, fit: BoxFit.cover),
-                    loadingBuilder: (context, child, loadingProgress) => 
-                      loadingProgress == null ? child : CircularProgressIndicator(),
-                  ), 
-                  title: Text(ticketData.title),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(ticketData.description),
-                      const SizedBox(height: 4),
-                      Row(
-                        children: [
-                          Text(
-                            '\$${ticketData.price.toStringAsFixed(2)}',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(width: 8),
-                          ElevatedButton(
-                            onPressed: () {
-                              _addToBasket(ticketData);
-                            },
-                            child: const Text('Add'),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                  return ListTile(
+                    leading: Image.network(
+                      ticketData.imageURL, width: 50, height: 50, fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                        Image.asset("assets/tickets/${ticketData.altURL}", width: 50, height: 50, fit: BoxFit.cover),
+                      loadingBuilder: (context, child, loadingProgress) => 
+                        loadingProgress == null ? child : CircularProgressIndicator(),
+                    ), 
+                    title: Text(ticketData.title),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(ticketData.description),
+                        const SizedBox(height: 4),
+                        Row(
+                          children: [
+                            Text(
+                              '\$${ticketData.price.toStringAsFixed(2)}',
+                              style: const TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(width: 8),
+                            ElevatedButton(
+                              onPressed: () {
+                                _addTicket(ticketData);
+                              },
+                              child: const Text('Add'),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+      )
     );
   }
 }

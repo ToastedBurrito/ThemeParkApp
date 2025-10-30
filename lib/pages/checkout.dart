@@ -58,8 +58,12 @@ class _BasketScreenState extends State<BasketScreen> {
                           ),
                           const SizedBox(width: 8),
                           ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
+                              await BasketUtils.removeFromBasket(ticket);
                               //remove from basket button goes here
+                              setState((){
+                                basketItems.remove(ticket);
+                              });
                             },
                             child: const Text('Remove'),
                           ),

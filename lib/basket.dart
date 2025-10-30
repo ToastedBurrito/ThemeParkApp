@@ -52,6 +52,25 @@ class BasketUtils {
     }
   }
 
+  static Future<void> removeFromBasket(Ticket ticket) async {
+    try {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      List<String> basket = prefs.getStringList(_key) ?? [];
+      bool removed = basket.remove(jsonEncode(ticket.toJson()));
+      if(removed){
+        await prefs.setStringList(_key, basket);
+        print('Removed ${ticket.title}');
+      } else {
+        print('Ticket ${ticket.title} not found in basket.');
+      }
+    } catch (e) {
+      print('Error removing from basket: $e');
+      // This may fail silently if the item is not found; handle as needed.
+    }
+  }
+
+
+
   static Future<List<Ticket>> getBasketItems() async {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
