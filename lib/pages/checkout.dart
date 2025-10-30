@@ -43,7 +43,21 @@ class _BasketScreenState extends State<BasketScreen> {
               itemBuilder: (context, index) {
                 final ticket = basketItems[index];
                 return ListTile(
-                  leading: Image.network(ticket.imageURL),
+                  leading: Image(
+                    image: NetworkImage(ticket.imageURL),
+                    errorBuilder: (context, error, stackTrace) =>
+                    Image.asset(
+                      'assets/tickets/${ticket.altURL}',
+                      errorBuilder: (context, error, stackTrace) => 
+                      const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.error),
+                          Text('Cannot load', style: TextStyle(fontSize: 8.0)),
+                        ],
+                      ),
+                    ),
+                  ),
                   title: Text(ticket.title),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
